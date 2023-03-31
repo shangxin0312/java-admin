@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.2.36:3306/markdb
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+  mvc:
+    format:
+      date: yyyy-MM-dd  #全局修改springMVC的日期格式
+  redis:
+    host: 192.168.2.36
+    #cluster:
+     # nodes: 192.168.2.36:6381,192.168.2.36:6382,192.168.2.36:6383,192.168.2.36:6391
+upload:
+  image:
+    max-size: 3
+    allow-types:
+      - image/jpeg
+      - image/gif
+      - image/png
+      - image/bmp
+fdfs:
+  tracker-list:
+    - 192.168.2.36:22122
+  thumb-image:
+    width: 240
+    height: 180
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+kgc:
+  jwt:
+   secret: abcdkgc@#$nb
+   token-expire: 1000                #令牌过期时间
+   refresh-token-expire: 3000      #刷新令牌的过期时间
+
